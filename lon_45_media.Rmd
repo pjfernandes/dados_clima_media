@@ -1,0 +1,30 @@
+---
+title: "Lon_45_Media"
+author: "Pedro"
+date: "21/04/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(Kendall)
+library(trend)
+
+df<-read.csv("lon_45.txt", sep="\t", h=T)
+```
+
+## Mann-Kendall
+
+```{r, echo=FALSE}
+MannKendall(df$TminJJA_mean_69_45)
+MannKendall(df$TminJFM_mean_65_45)
+MannKendall(df$TminJFM_mean_54_45)
+```
+
+## Sen's Slope
+
+```{r pressure, echo=FALSE}
+sens.slope(df$TminJJA_mean_69_45)
+sens.slope(df$TminJFM_mean_65_45)
+sens.slope(df$TminJFM_mean_54_45)
+```
