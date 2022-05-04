@@ -1,0 +1,28 @@
+---
+title: "tmax_ago_dez_54_75"
+author: "Pedro"
+date: "04/05/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(Kendall)
+library(trend)
+
+df<-read.csv("ago_dez_54_75", sep="\t", h=T)
+```
+
+## Mann-Kendall
+
+```{r, echo=TRUE}
+MannKendall(df$TMaxAgo)
+MannKendall(df$TmaxDez)
+```
+
+## Sen's Slope
+
+```{r pressure, echo=FALSE}
+sens.slope(df$TMaxAgo)
+sens.slope(df$TmaxDez)
+```
