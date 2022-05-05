@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabela com resultados</title>
+</head>
+<body>
+  <div class="tabela">
+    <table>
+      <tr class="header">
+        <th>
+          Dado
+        </th>
+        <th>
+          Tau de Mann-Kendall
+        </th>
+        <th>
+          Declividade Sen
+        </th>
+        <th>
+          Valor p
+        </th>
+      </tr>
+
+      <tr>
+        <th>
+          TminJJA_mean_69_45
+        </th>
+        <th>
+          0.333
+        </th>
+        <th>
+          0.18333
+        </th>
+        <th>
+          0.0020045
+        </th>
+      </tr>
+
+      <tr>
+        <th>
+          TminJFM_mean_65_45
+        </th>
+        <th>
+          -0.229
+        </th>
+        <th>
+          -0.1894737
+        </th>
+        <th>
+          0.03449
+        </th>
+      </tr>
+
+      <tr>
+        <th>
+          TminJFM_mean_54_45
+        </th>
+        <th>
+          -0.308
+        </th>
+        <th>
+          -0.025
+        </th>
+        <th>
+          0.005174
+        </th>
+      </tr>
+
+      <tr>
+        <th>
+          TminSO_mean_69_60
+        </th>
+        <th>
+          0.272
+        </th>
+        <th>
+          0.1454545
+        </th>
+        <th>
+          0.01187
+        </th>
+      </tr>
+
+      <tr>
+        <th>
+          TmaxFM_mean_65_60
+        </th>
+        <th>
+          0.347
+        </th>
+        <th>
+          0.01153846
+        </th>
+        <th>
+          0.001856
+        </th>
+      </tr>
+
+      <tr>
+        <th>
+          TmaxJAS_mean_60_60
+        </th>
+        <th>
+          -0.374
+        </th>
+        <th>
+          -0.02285714
+        </th>
+        <th>
+          0.0006873
+        </th>
+      </tr>
+
+      <tr>
+        <th>
+          TminDJ_mean_54_60
+        </th>
+        <th>
+          -0.38
+        </th>
+        <th>
+          -0.03225806
+        </th>
+        <th>
+          0.0004891
+        </th>
+      </tr>
+
+      <tr>
+        <th>
+          TminJJA_mean_69_75
+        </th>
+        <th>
+          0.409
+        </th>
+        <th>
+          0.2526316
+        </th>
+        <th>
+          0.0001483
+        </th>
+      </tr>
+
+      <tr>
+        <th>
+          TminSO_mean_69_75
+        </th>
+        <th>
+          0.377
+        </th>
+        <th>
+          0.3205128
+        </th>
+        <th>
+          0.0004634
+        </th>
+      </tr>
+
+      <tr>
+        <th>
+          TminDJ_mean_65_75
+        </th>
+        <th>
+          -0.382
+        </th>
+        <th>
+          -0.03333333
+        </th>
+        <th>
+          0.0004695
+        </th>
+      </tr>
+
+      <tr>
+        <th>
+          TminDJ_mean_60_75
+        </th>
+        <th>
+          -0.545
+        </th>
+        <th>
+          -0.05
+        </th>
+        <th>
+          5.807e-07
+        </th>
+      </tr>
+
+      <tr>
+        <th>
+          TminJF_mean_54_75
+        </th>
+        <th>
+          -0.352
+        </th>
+        <th>
+          -0.03125
+        </th>
+        <th>
+          0.00129
+        </th>
+      </tr>
+
+      <tr>
+        <th>
+          TminND_mean_54_75
+        </th>
+        <th>
+          -0.382
+        </th>
+        <th>
+          -0.03714286
+        </th>
+        <th>
+          0.0004541
+        </th>
+      </tr>
+
+      <tr>
+        <th>
+          TMaxAgo_54_75
+        </th>
+        <th>
+          0.368
+        </th>
+        <th>
+          0.01923077
+        </th>
+        <th>
+          0.000822
+        </th>
+      </tr>
+
+      <tr>
+        <th>
+          TmaxDez_54_75
+        </th>
+        <th>
+          -0.283
+        </th>
+        <th>
+          -0.02352941
+        </th>
+        <th>
+          0.01049
+        </th>
+      </tr>
+
+
+    </table>
+    <p>Obs: Em laranja, tendências significativas (p < 0.05)</p>
+  </div>
+</body>
+<style>
+  .tabela {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  table, th, td {
+    border: 1px solid rgb(54, 53, 53);
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+  }
+
+  .header {
+    background-color: rgb(194, 193, 193);
+  }
+
+  p {
+    color: black;
+    font-weight: bolder;
+  }
+</style>
+
+<script>
+  const linhas = document.querySelectorAll("tr");
+
+  linhas.forEach(element => {
+    let pValue = element.querySelectorAll("th")[3].innerText;
+    if (parseFloat(pValue) < 0.05) {
+      element.style.backgroundColor = "orange";
+    }
+  });
+
+</script>
+
+</html>
