@@ -1,0 +1,98 @@
+---
+title: "Pettit test"
+author: "Pedro"
+date: '2022-05-12'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(trend)
+```
+
+## Resultados
+```{r}
+setwd("/home/uff/Área de Trabalho/arquivos/dados_clima_media")
+df<-read.csv("tabela_1_pettit_test.txt", h=T, sep="\t")
+df2<-read.csv("tabela_2_pettit_test.txt", h=T, sep="\t")
+head(df)
+head(df2)
+```
+```{r}
+pettitt.test(df$TminJJA_mean_69_45)
+
+pettitt.test(df$TminJFM_mean_65_45)
+
+pettitt.test(df$TminSO_mean_69_60)
+
+pettitt.test(df$TminJJA_mean_69_75)
+
+pettitt.test(df$TminSO_mean_69_75)
+#############################################
+pettitt.test(df2$TminJAN_69_45)
+pettitt.test(df2$TminJul_65_45)
+
+```
+<table>
+  <tr>
+    <th> Dado </th>
+    <th> Valor p </th>
+    <th> Ponto de quebra </th>
+  </tr>
+  
+  <tr>
+    <th> TminJJA_mean_69_45 </th>
+    <th> 0.005747 </th>
+    <th> 1997 (19)</th>
+  </tr>
+  
+  <tr>
+    <th> TminJFM_mean_65_45 </th>
+    <th> 0.1926 </th>
+    <th> 1988 (10)</th>
+  </tr>
+  
+  <tr>
+    <th> TminSO_mean_69_60 </th>
+    <th> 0.0008202 </th>
+    <th> 1998 (20)</th>
+  </tr>
+ 
+  <tr>
+    <th> TminJJA_mean_69_75 </th>
+    <th> 0.0001308 </th>
+    <th> 1997 (19)</th>
+  </tr> 
+  
+  <tr>
+    <th> TminSO_mean_69_75 </th>
+    <th> 0.009921 </th>
+    <th> 1995 (17)</th>
+  </tr> 
+ 
+  <tr>
+    <th> TminJAN_69_45 </th>
+    <th> 0.01802 </th>
+    <th> 2003 (25)</th>
+  </tr> 
+  
+  <tr>
+    <th> TminJul_65_45 </th>
+    <th> 0.005504 </th>
+    <th> 1998 (20)</th>
+  </tr>  
+  
+  
+</table>
+
+<style>
+  table, th, tr {
+    border: solid 1px red;
+    text-align: center;
+    padding: 5px;
+  }
+  
+  body {
+    text-align: center;
+  }
+</style>
